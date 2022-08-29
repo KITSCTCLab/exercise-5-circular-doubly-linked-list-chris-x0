@@ -11,12 +11,11 @@ class DoublyCircularLinkedList:
         self.count = 0
 
     def add_at_tail(self, data) -> bool:
-        # Write code here
         temp = self.head
         if temp is None:
             self.head = Node(data)
             self.count += 1
-#             return True
+            
         else:
             while temp.next is not self.head:
                 temp = temp.next
@@ -28,7 +27,6 @@ class DoublyCircularLinkedList:
             return True
 
     def add_at_head(self, data) -> bool:
-        # Write code here
         if self.head is None:
             self.head = Node(data)
             self.count = 1
@@ -46,7 +44,6 @@ class DoublyCircularLinkedList:
         return True        
 
     def add_at_index(self, index, data) -> bool:
-        # Write code here
         if (index >= self.count) or (index < 0):
             return False
         if self.head is None:
@@ -69,7 +66,6 @@ class DoublyCircularLinkedList:
             return True        
 
     def get(self, index) -> int:
-        # Write code here
         if (index >= self.count) or (index < 0):
             return -1
         if self.head is None:
@@ -81,7 +77,7 @@ class DoublyCircularLinkedList:
             return temp.data        
 
     def delete_at_index(self, index) -> bool:
-        # Write code here
+       
         if (index >= self.count) | (index < 0):
             return False
         if self.count == 1:
@@ -101,7 +97,6 @@ class DoublyCircularLinkedList:
         return True        
 
     def get_previous_next(self, index) -> list:
-        # Write code here
         if (index >= self.count) or (index < 0) or self.head is None:
             return [-1]
         else:
